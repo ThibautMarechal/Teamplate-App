@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:8.0.20
+    ports: 
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+       - ./data:/var/lib/mysql
+    restart: always
+
+  adminer:
+    image: adminer
+    ports: 
+      - 8080:8080
+    restart: always

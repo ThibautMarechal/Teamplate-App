@@ -28,7 +28,7 @@ export default () => {
     <Container className={style.main}>
       <Row>
         <Col xs={12} md={6}>
-          <Jumbotron>
+          <Jumbotron style={{ borderColor: '#550A21', borderWidth: 1, borderStyle: 'solid'}}>
             <h1>On se marie !</h1>
             <p>bla bla bla bli bla blou ect..</p>
           </Jumbotron>

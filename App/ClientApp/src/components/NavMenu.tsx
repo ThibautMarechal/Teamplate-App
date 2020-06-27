@@ -13,7 +13,7 @@ export default () => {
 
   return (
     <header>
-      <Navbar className={cn("navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 border-bottom border-primary", style.nav)} light>
+      <Navbar className={cn("navbar-expand-sm navbar-toggleable-sm ng-white box-shadow mb-3 border-primary", style.nav)} light>
         <Container>
           <NavbarBrand tag={Link} to="/">App</NavbarBrand>
           <NavbarToggler onClick={handleNavTogglerClick} className="mr-2" />
@@ -29,7 +29,7 @@ export default () => {
                 <NavLink tag={Link} className="text-dark" to="/acces">Accès</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/concour">Concours</NavLink>
+                <NavLink tag={Link} className="text-dark" to="/concours">Concours</NavLink>
               </NavItem>
             </ul>
           </Collapse>

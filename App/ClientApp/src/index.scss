@@ -1,0 +1,9 @@
+// Override default variables before the import
+$primary: #550A21;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  background-image: url('/assets/background.jpg');
+  background-size: 100%;
+}

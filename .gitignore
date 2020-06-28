@@ -267,5 +267,5 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 
-data
-App/clientApp/node_modules
+/data
+/App/clientApp/node_modules

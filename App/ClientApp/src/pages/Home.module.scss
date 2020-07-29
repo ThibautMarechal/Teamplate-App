@@ -1,6 +1,21 @@
 .main {
   .mainImg {
     width: 100%;
+    border-radius: 5px;
   }
+  .laurierImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+  }
+}
+.title {
+  line-height: 1.5em;
+}
+.vouteImg{
+  float: left;
+  shape-outside: url('/assets/voute-calc.png');
+  width: 100%;
 }
 

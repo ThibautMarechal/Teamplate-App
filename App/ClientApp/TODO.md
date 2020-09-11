@@ -1,17 +1,17 @@
 # HOME
-vertical align (text) Photo au dessus
-aligne OUI + date
+x vertical align (text) Photo au dessus
+x aligne OUI + date
 
 # Events
 Rajouter un texte personalié par le niveau d'accès (à coté de premier event)
 
 # Access
-Carte à supprimer => Remplcé par dessin
+Carte à supprimer => Remplacé par dessin
 
 # Concours
 TODO
 
-Témoins => changer en Notre équipe
+x Témoins => changer en Notre équipe
 
 # Présentation de l'équipe
 Menu à gauche avec racourcis, highlight de l'article en cours

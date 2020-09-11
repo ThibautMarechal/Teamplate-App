@@ -53,7 +53,7 @@ const weddingEvents: WeddingEvent[] = [
     volume: 1
   },
   {
-    hour: '17h00',
+    hour: '17h30',
     description: 'Repas',
     icon: './assets/icon-dinner.png',
     iconAlt: 'assets/icon-dinner-alt.png',
@@ -61,7 +61,7 @@ const weddingEvents: WeddingEvent[] = [
     volume: 0.1
   },
   {
-    hour: '20h30',
+    hour: '21h00',
     description: 'Soirée',
     icon: './assets/icon-music.png',
     iconAlt: 'assets/icon-music-alt.png',

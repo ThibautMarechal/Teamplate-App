@@ -5,12 +5,21 @@ import style from './Home.module.scss';
 import useSound from 'use-sound';
 
 export default () => {
-  const [play, { stop }] = useSound('./assets/sound/ring.mp3', { volume: 0.1 });
+  const [play, { stop }] = useSound('./assets/sound/ring.mp3', { volume: 0.2 });
 
   return (
     <Container className={style.main}>
       <Row>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={{ size: 10, offset: 1}}>
+          <img
+            src="./assets/main.jpg" 
+            alt="Sylvie-et-Laurent"
+            className={style.mainImg}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12} md={{ size: 10, offset: 1}}>
           <img src="./assets/laurier-2.png" alt="laurier" className={style.laurierImg}/>
           <img src="./assets/voute.png" alt="voute" className={style.vouteImg}/>
           <h2 className={cn(style.title, "text-primary")}>On se marie!</h2>
@@ -22,13 +31,6 @@ export default () => {
             C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
             Nous nous marions<br/>
             <h4 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h4>
-        </Col>
-        <Col xs={12} md={{ size: 5, offset: 1}}>
-          <img
-            src="./assets/main.jpg" 
-            alt="Sylvie-et-Laurent"
-            className={style.mainImg}
-          />
         </Col>
       </Row>
     </Container>

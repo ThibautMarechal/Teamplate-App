@@ -4,12 +4,15 @@ import { HashRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
+import { AuthorizationProvider } from './Authorization';
 
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <HashRouter>
-    <App />
+    <AuthorizationProvider>
+      <App />
+    </AuthorizationProvider>
   </HashRouter>,
   rootElement);
 

@@ -29,6 +29,7 @@
     "reactstrap": "^8.5.1",
     "serve": "^11.3.2",
     "typescript": "~3.7.2",
+    "use-easing": "^0.0.7",
     "use-sound": "^1.0.2"
   },
   "scripts": {

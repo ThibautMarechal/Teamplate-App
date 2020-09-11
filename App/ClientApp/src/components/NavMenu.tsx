@@ -1,10 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, Form, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import style from './NavMenu.module.scss';
+import { useLogged, useLogin } from '../Authorization';
 
 export default () => {
+  const logged = useLogged();
+  const login = useLogin();
   const [navCollapsed, setNavCollapsed] = useState(true);
 
   const handleNavTogglerClick = useCallback(() => {
@@ -19,21 +22,29 @@ export default () => {
           <NavbarToggler onClick={handleNavTogglerClick} className="mr-2" />
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!navCollapsed} navbar>
             <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/temoins"><img src="./assets/icon-sign.png" alt="temoins" width={20}/>Nos témoins</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/programme"><img src="./assets/icon-clock.png" alt="laurier" width={20}/>Programme</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/acces"><img src="./assets/icon-world.png" alt="world" width={20}/>Accès</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/concours"><img src="./assets/icon-concours.png" alt="laurier" width={20}/>Concours</NavLink>
-              </NavItem>
+              {logged ? (
+                <>
+                  <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/temoins"><img src="./assets/icon-sign.png" alt="temoins" width={20}/>Notre équipe</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/programme"><img src="./assets/icon-clock.png" alt="laurier" width={20}/>Programme</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/acces"><img src="./assets/icon-world.png" alt="world" width={20}/>Accès</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/concours"><img src="./assets/icon-concours.png" alt="laurier" width={20}/>Concours</NavLink>
+                  </NavItem>
+                </>
+              ): (
+                <Form inline>
+                  <Button type="button" onClick={login} color="primary">Se connecter</Button>
+                </Form>
+              )}
             </ul>
           </Collapse>
         </Container>

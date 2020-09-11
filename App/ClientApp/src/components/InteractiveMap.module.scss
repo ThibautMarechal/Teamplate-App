@@ -1,0 +1,30 @@
+.map {
+  width: 100%
+}
+.subMap {
+  position: absolute;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border-color: #7c4153;
+  border-width: 4px;
+  border-style: solid;
+  transform: translate(-50%, -50%);
+  animation: bump 1s;
+  cursor: zoom-in;
+}
+
+.zommOut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  cursor: zoom-out;
+}
+
+@keyframes bump {
+  0% { transform: translate(-50%, -50%) scale(0) }
+  70% { transform: translate(-50%, -50%) scale(0) }
+  80% { transform: translate(-50%, -50%) scale(1.5) }
+  100% { transform: translate(-50%, -50%) scale(1) }
+}

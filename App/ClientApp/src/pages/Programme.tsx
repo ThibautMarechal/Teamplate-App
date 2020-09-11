@@ -20,13 +20,6 @@ export default () => {
           </Col>
         </Row>
       ))}
-      <Row>
-        <Col>
-        <p style={{color: 'whitesmoke'}}>
-          * : Seulement pour ceux qu'on aime
-        </p>
-        </Col>
-      </Row>
     </Container>
   );
 }

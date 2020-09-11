@@ -10,6 +10,10 @@
     width: 20%;
   }
 }
+.highlightRight {
+  transform: translateY(-1em);
+  text-align: end;
+}
 .title {
   line-height: 1.5em;
 }

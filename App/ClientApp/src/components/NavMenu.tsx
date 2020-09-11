@@ -20,7 +20,7 @@ export default () => {
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!navCollapsed} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/temoins"><img src="./assets/icon-clock.png" alt="temoins" width={20}/>Nos témoins</NavLink>
+                <NavLink tag={Link} className="text-dark" to="/temoins"><img src="./assets/icon-sign.png" alt="temoins" width={20}/>Nos témoins</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>

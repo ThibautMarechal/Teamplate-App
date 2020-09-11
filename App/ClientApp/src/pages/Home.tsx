@@ -14,14 +14,14 @@ export default () => {
           <img src="./assets/laurier-2.png" alt="laurier" className={style.laurierImg}/>
           <img src="./assets/voute.png" alt="voute" className={style.vouteImg}/>
           <h2 className={cn(style.title, "text-primary")}>On se marie!</h2>
-          Après onze années d'amour<br/>
-          Des aventures que vous avez pu suivre de près ou de loin<br/>
-          La construction de notre nid douillet<br/>
-          Il était temps de se dire<br/>
-          <h4 className="text-primary" onMouseEnter={() => play()} onMouseLeave={() => stop()} style={{ textAlign: 'end'}}>OUI</h4>
-          C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
-          Nous nous marions<br/>
-          <h4 className="text-primary" style={{ textAlign: 'end'}}>le 23 janvier 2021</h4>
+            Après onze années d'amour<br/>
+            Des aventures que vous avez pu suivre de près ou de loin<br/>
+            La construction de notre nid douillet<br/>
+            Il était temps de se dire<br/>
+            <h4 className={cn("text-primary", style.highlightRight)} onMouseEnter={() => play()} onMouseLeave={() => stop()}>OUI</h4>
+            C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
+            Nous nous marions<br/>
+            <h4 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h4>
         </Col>
         <Col xs={12} md={{ size: 5, offset: 1}}>
           <img

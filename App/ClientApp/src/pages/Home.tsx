@@ -10,7 +10,7 @@ export default () => {
   return (
     <Container className={style.main}>
       <Row>
-        <Col xs={12} md={{ size: 10, offset: 1}}>
+        <Col xs={12} md={{ size: 4, offset: 4}}>
           <img
             src="./assets/main.jpg" 
             alt="Sylvie-et-Laurent"
@@ -19,8 +19,10 @@ export default () => {
         </Col>
       </Row>
       <Row>
-        <Col xs={12} md={{ size: 10, offset: 1}}>
-          <img src="./assets/laurier-2.png" alt="laurier" className={style.laurierImg}/>
+        <br/>
+      </Row>
+      <Row>
+        <Col xs={12} md={{ size: 6, offset: 3}}>
           <img src="./assets/voute.png" alt="voute" className={style.vouteImg}/>
           <h2 className={cn(style.title, "text-primary")}>On se marie!</h2>
             Après onze années d'amour<br/>
@@ -29,7 +31,7 @@ export default () => {
             Il était temps de se dire<br/>
             <h4 className={cn("text-primary", style.highlightRight)} onMouseEnter={() => play()} onMouseLeave={() => stop()}>OUI</h4>
             C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
-            Nous nous marions<br/>
+            Nous nous marions<br/><br />
             <h4 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h4>
         </Col>
       </Row>

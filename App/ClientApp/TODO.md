@@ -1,12 +1,12 @@
 # HOME
 x vertical align (text) Photo au dessus
-x aligne OUI + date
+x aligne OUI + date => aligné centré
 
 # Events
 Rajouter un texte personalié par le niveau d'accès (à coté de premier event)
 
 # Access
-Carte à supprimer => Remplacé par dessin
+x Carte à supprimer => Remplacé par dessin
 
 # Concours
 TODO

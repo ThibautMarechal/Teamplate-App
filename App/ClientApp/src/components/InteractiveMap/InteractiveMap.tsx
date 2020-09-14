@@ -9,7 +9,14 @@ type subMaps = {
 
 type Map = {
   src: string;
-  subMaps?: subMaps[]
+  subMaps?: subMaps[];
+  pointOfInterests?: PointOfInterest[]
+}
+
+type PointOfInterest = {
+  x: number;
+  y: number;
+  element: JSX.Element;
 }
 
 type Props = {
@@ -21,6 +28,7 @@ const InteractiveMap = ({
   src,
   depth = 0,
   subMaps = [],
+  pointOfInterests = [],
   onZoomOut
 }: Props) => {
   const [zommedSubMapIndex, setZommedSubMapIndex] = useState(-1);
@@ -42,6 +50,17 @@ const InteractiveMap = ({
             }}
             onClick={() => setZommedSubMapIndex(i)}
           />
+        ))}
+        {pointOfInterests.map(poi => (
+          <div
+            className={styles.pointOfInterest}
+            style={{
+              top: `${poi.y * 100}%`,
+              left: `${poi.x * 100}%`
+            }}
+          >
+            {poi.element}
+          </div>
         ))}
       </div>
     );

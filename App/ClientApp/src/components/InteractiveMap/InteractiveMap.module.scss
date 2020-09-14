@@ -1,24 +1,29 @@
 .map {
-  width: 100%
+  width: 100%;
+  overflow: hidden;
 }
 .subMap {
   position: absolute;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  border-color: #7c4153;
-  border-width: 4px;
+  height: 8%;
+  width: 8%;
+  border-color: #550A21;
+  border-width: 5px;
   border-style: solid;
   transform: translate(-50%, -50%);
   animation: bump 1s;
   cursor: zoom-in;
 }
 
+.pointOfInterest{
+  position: absolute;
+}
+
 .zommOut {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px;
+  width: 8%;
   cursor: zoom-out;
 }
 

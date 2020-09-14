@@ -1,0 +1,15 @@
+.response{
+  &.titi {
+    text-align: right;
+  }
+  &.leon {
+    text-align: left;
+  }
+  .emotion {
+    font-size: 0.65em;
+    padding-left: 10px;
+  }
+  .response {
+    padding: 10px;
+  }
+}

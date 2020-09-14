@@ -6,6 +6,7 @@ import Access from './pages/Access';
 import Programme from './pages/Programme';
 import Concours from './pages/Concours';
 import { useLogged } from './Authorization';
+import Equipe from './pages/Equipe';
 
 export default () => {
   const logged = useLogged();
@@ -16,6 +17,7 @@ export default () => {
       {logged ? (
         <>
           <Route exact path='/acces' component={Access} />
+          <Route exact path='/equipe' component={Equipe} />
           <Route exact path='/programme' component={Programme} />
           <Route exact path='/concours' component={Concours} />
         </>

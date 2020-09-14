@@ -25,7 +25,7 @@ export default () => {
               {logged ? (
                 <>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/temoins"><img src="./assets/icon-sign.png" alt="temoins" width={20}/>Notre équipe</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/equipe"><img src="./assets/icon-sign.png" alt="equipe" width={20}/>Notre équipe</NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>

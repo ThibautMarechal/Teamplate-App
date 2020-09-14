@@ -8,7 +8,7 @@ export default () => {
   return (
     <Container>
       <Row>
-        <Col lg={{ size: 8, offset: 2 }} md={12}>
+        <Col lg={{ size: 8, offset: 2 }} md={12} style={{ overflow: 'hidden'}}>
           <AutoSizer disableHeight>
             {({ width }) => {
               const fontSize = width / 40;

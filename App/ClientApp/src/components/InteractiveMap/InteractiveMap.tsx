@@ -36,7 +36,7 @@ const InteractiveMap = ({
     return <InteractiveMap {...subMaps[zommedSubMapIndex].map} depth={depth + 1} onZoomOut={() => setZommedSubMapIndex(-1)}/>
   } else {
     return (
-      <div style={{ position: 'relative' }}>
+      <div className={styles.wrapper}>
         {depth > 0 ? (
           <img src="/assets/icon-zoom-out.png" className={styles.zommOut} alt="zoom-out" onClick={onZoomOut}/>
         ) : null}

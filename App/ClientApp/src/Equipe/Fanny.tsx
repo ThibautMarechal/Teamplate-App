@@ -67,11 +67,11 @@ const conversation: Response[] = [
 export default () => {
   return (
     <>
-      <h3>Fanny vue par ses chats</h3>
+      <h3 className="text-primary">Fanny vue par ses chats</h3>
       {conversation.map(response => (
         <div className={cn(styles.response, styles[fromClassName[response.from]])}>
           <h4>{response.from}{response.emotion ? <span className={styles.emotion}>({response.emotion})</span> : null}</h4>
-          <p className={styles.response}>{response.message}</p>
+          <div className={styles.message}><span>{response.message}</span></div>
         </div>
       ))}
     </>

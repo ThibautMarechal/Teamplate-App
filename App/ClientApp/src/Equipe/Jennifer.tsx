@@ -18,7 +18,7 @@ const tags: string[] = [
 export default () => {
   return (
     <>
-      <h3>Jennifer en quelques mots</h3>
+      <h3 className="text-primary">Jennifer en quelques mots</h3>
       <ul>
         {tags.map((tag) => (
           <li>{tag}</li>

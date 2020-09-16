@@ -17,7 +17,7 @@ export default () => {
       {logged ? (
         <>
           <Route exact path='/acces' component={Access} />
-          <Route exact path='/equipe' component={Equipe} />
+          <Route path='/equipe' component={Equipe} />
           <Route exact path='/programme' component={Programme} />
           <Route exact path='/concours' component={Concours} />
         </>

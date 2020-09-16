@@ -23,7 +23,7 @@ const fable: string[] = [
 export default () => {
   return (
     <>
-      <h3>Joël en une fable</h3>
+      <h3 className="text-primary">Joël en une fable</h3>
       {fable.map(vers => (
         <p>{vers}</p>
       ))}

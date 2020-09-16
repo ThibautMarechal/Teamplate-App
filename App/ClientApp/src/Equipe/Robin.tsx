@@ -21,7 +21,7 @@ const passport: { [i: string]: string } = {
 export default () => {
   return (
     <>
-      <h3>Le passport de Robin</h3>
+      <h3 className="text-primary">Le passport de Robin</h3>
       {Object.entries(passport).map(([key, value]) => (
         <p>{key} : {value}</p>
       ))}

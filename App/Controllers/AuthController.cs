@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using System.Threading.Tasks;
 using App.Models;
 using App.Services.Auth;
 using Microsoft.AspNetCore.Authorization;

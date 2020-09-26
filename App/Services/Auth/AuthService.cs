@@ -35,7 +35,7 @@ namespace App.Services.Auth
         {
           new Claim(ClaimTypes.Name, userName)
         }),
-        Expires = DateTime.MaxValue,
+        Expires = DateTime.UtcNow.AddYears(1),
         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
       };
       var token = tokenHandler.CreateToken(tokenDescriptor);

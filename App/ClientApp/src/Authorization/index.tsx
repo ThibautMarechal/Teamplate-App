@@ -1,12 +1,8 @@
 import React, { useContext, useState, useMemo, useCallback, useEffect } from 'react';
 import jwt_decode from 'jwt-decode';
-import Axios from 'axios';
+import Api from '../Api';
 import { useLocalStorage } from 'react-use'
-import { Modal, ModalHeader, ModalBody, Form, Input, Button, FormGroup, Label } from 'reactstrap';
-
-type User = {
-  id: string;
-}
+import { Modal, ModalHeader, ModalBody, Form, Input, Button, FormGroup, Label, FormFeedback } from 'reactstrap';
 
 type AuthorizationType = {
   logged: boolean;
@@ -22,12 +18,12 @@ export const useUsername = () => useContext(Context).username;
 export const useLogin = () => useContext(Context).login
 export const useLogout = () => useContext(Context).logout
 export const AuthorizationProvider = ({ children }: { children: JSX.Element }) => {
+  const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useLocalStorage('token', null);
   useEffect(() => {
-    Axios.interceptors.request.use(config => {
-      config.headers.post['Authorization'] = `Bearer ${token}`;
-      return config;
-    });
+    if(token){
+      Api.defaults.headers.post['Authorization'] = `Bearer ${token}`;
+    }
   }, [token])
   const username = useMemo<string | undefined>(() => {
     if(token) 
@@ -57,14 +53,26 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
           <ModalBody>
             <Form onSubmit={e => {
               e.preventDefault();
-              Axios.post('/api/auth/login', { password }).then(({ data: { token } }) => {
+              Api.post('/api/auth/login', { password }).then(({ data: { token } }) => {
                 setShowLoginModal(false);
                 setToken(token);
+              }).catch(({ response:{ data: { message }} }) => {
+                setError(message);
+                setPassword('');
               });
             }}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input type="password" name="password" id="password" placeholder="Mot de passe" value={password} onChange={e => setPassword(e.target.value)}/>
+                <Input 
+                  type="password" 
+                  name="password" 
+                  id="password" 
+                  placeholder="Mot de passe" 
+                  value={password} 
+                  onChange={e => setPassword(e.target.value)}
+                  invalid={!!error}
+                />
+                {error ? (<FormFeedback>{error}</FormFeedback>) : null}
               </FormGroup>
               <Button type="submit" color="primary">Se connecter</Button>
             </Form>

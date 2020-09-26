@@ -3,7 +3,7 @@ x vertical align (text) Photo au dessus
 x aligne OUI + date => aligné centré
 
 # Events
-Rajouter un texte personalié par le niveau d'accès (à coté de premier event)
+x Rajouter un texte personalié par le niveau d'accès (à coté de premier event)
 
 # Access
 x Carte à supprimer => Remplacé par dessin
@@ -17,13 +17,13 @@ x Témoins => changer en Notre équipe
 Menu à gauche avec racourcis, highlight de l'article en cours
 
 # Access rights
-"jeleveux" => ALL-IN
-"oui" => à partir de 15H
-"santé" => juste vin d'honneur 15H
-"fiesta" => juste la soirée
+x "jeleveux" => ALL-IN
+x "oui" => à partir de 15H
+x "santé" => juste vin d'honneur 15H
+x "fiesta" => juste la soirée
 
 # Map
-Ajouter de annotations sur la map
+x Ajouter de annotations sur la map
 
 
 

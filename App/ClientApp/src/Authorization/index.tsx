@@ -1,4 +1,5 @@
 import React, { useContext, useState, useMemo, useCallback, useEffect } from 'react';
+import jwt_decode from 'jwt-decode';
 import Axios from 'axios';
 import { useLocalStorage } from 'react-use'
 import { Modal, ModalHeader, ModalBody, Form, Input, Button, FormGroup, Label } from 'reactstrap';
@@ -9,7 +10,7 @@ type User = {
 
 type AuthorizationType = {
   logged: boolean;
-  user?: User,
+  username?: string,
   bearer?: string;
   login: () => void; 
   logout: () => void; 
@@ -17,7 +18,7 @@ type AuthorizationType = {
 
 export const Context = React.createContext<AuthorizationType>({ logged: false, login: () => {}, logout: () => {} });
 export const useLogged = () => useContext(Context).logged;
-export const useUser = () => useContext(Context).user;
+export const useUsername = () => useContext(Context).username;
 export const useLogin = () => useContext(Context).login
 export const useLogout = () => useContext(Context).logout
 export const AuthorizationProvider = ({ children }: { children: JSX.Element }) => {
@@ -28,21 +29,25 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
       return config;
     });
   }, [token])
+  const username = useMemo<string | undefined>(() => {
+    if(token) 
+      return jwt_decode<{ unique_name: string }>(token).unique_name;
+    return undefined;
+  }, [token])
   const [password, setPassword] = useState('');
-  const [user, setUser] = useState<User>();
   const [showLoginModal, setShowLoginModal] = useState(false);
   const login = useCallback(() => {
     setShowLoginModal(true);
   }, []);
   const logout = useCallback(() => {
-    setUser(undefined);
-  }, []);
+    setToken(null);
+  }, [setToken]);
   const contextValue = useMemo<AuthorizationType>(() => ({
     logged: !!token,
-    user,
+    username,
     login,
     logout
-  }), [token, user, login, logout]);
+  }), [token, username, login, logout]);
   return (
     <Context.Provider value={contextValue}>
       <>

@@ -18,7 +18,7 @@ const temoins: Temoin[] = [
   },
   {
     name: 'Aurélie',
-    picture: './assets/aurelie.pngs'
+    picture: './assets/aurelie.png'
   },
   {
     name: 'Jennifer',

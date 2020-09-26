@@ -2,10 +2,9 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using App.Configuration;
+using App.Constants;
 using App.Services.UserCreator.Exceptions;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -13,22 +12,20 @@ namespace App.Services.UserCreator
 {
   public class UsersCreatorService : IHostedService
   {
-    private readonly UsersConfiguration _usersConfiguration;
     private readonly IServiceProvider _serviceProvider;
-    public UsersCreatorService(UsersConfiguration usersConfiguration, IServiceProvider serviceProvider)
+    public UsersCreatorService(IServiceProvider serviceProvider)
     {
       _serviceProvider = serviceProvider;
-      _usersConfiguration = usersConfiguration;
     }
 
-    private async Task CreateUser(UserManager<IdentityUser> userManager, UserConfiguration userConfiguration)
+    private async Task CreateUser(UserManager<IdentityUser> userManager, string username, string password)
     {
       var user = new IdentityUser
       {
-        Email = $"{userConfiguration.Username}@thibautmarechal.be",
-        UserName = userConfiguration.Username
+        Email = $"{username}@thibautmarechal.be",
+        UserName = username
       };
-      user.PasswordHash = userManager.PasswordHasher.HashPassword(user, userConfiguration.Password);
+      user.PasswordHash = userManager.PasswordHasher.HashPassword(user, password);
       var userCreationResult = await userManager.CreateAsync(user).ConfigureAwait(false);
       if (!userCreationResult.Succeeded)
         throw new CreateUserException();
@@ -40,10 +37,11 @@ namespace App.Services.UserCreator
       var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
       if (userManager.Users.Count() == 0)
       {
-        await CreateUser(userManager, _usersConfiguration.AllIn).ConfigureAwait(false);
-        await CreateUser(userManager, _usersConfiguration.Vine).ConfigureAwait(false);
-        await CreateUser(userManager, _usersConfiguration.NoCeremony).ConfigureAwait(false);
-        await CreateUser(userManager, _usersConfiguration.Party).ConfigureAwait(false);
+        await CreateUser(userManager, Users.AllIn, Users.AllInPassword).ConfigureAwait(false);
+        await CreateUser(userManager, Users.Vine, Users.VinePassword).ConfigureAwait(false);
+        await CreateUser(userManager, Users.NoCeremony, Users.NoCeremonyPassword).ConfigureAwait(false);
+        await CreateUser(userManager, Users.Party, Users.PartyPassword).ConfigureAwait(false);
+        await CreateUser(userManager, Users.Demo, Users.DemoPassword).ConfigureAwait(false);
       }
     }
 

@@ -31,7 +31,6 @@ namespace App
 
       services
         .AddSingleton(templateConfiguration.Auth)
-        .AddSingleton(templateConfiguration.Users)
         .AddSingleton(templateConfiguration.Database);
 
       //Authentications & Authorizations

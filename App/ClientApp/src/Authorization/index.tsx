@@ -1,4 +1,6 @@
-import React, { useContext, useState, useMemo, useCallback } from 'react';
+import React, { useContext, useState, useMemo, useCallback, useEffect } from 'react';
+import Axios from 'axios';
+import { useLocalStorage } from 'react-use'
 import { Modal, ModalHeader, ModalBody, Form, Input, Button, FormGroup, Label } from 'reactstrap';
 
 type User = {
@@ -19,7 +21,13 @@ export const useUser = () => useContext(Context).user;
 export const useLogin = () => useContext(Context).login
 export const useLogout = () => useContext(Context).logout
 export const AuthorizationProvider = ({ children }: { children: JSX.Element }) => {
-  const [logged, setLogged] = useState(true);
+  const [token, setToken] = useLocalStorage('token', null);
+  useEffect(() => {
+    Axios.interceptors.request.use(config => {
+      config.headers.post['Authorization'] = `Bearer ${token}`;
+      return config;
+    });
+  }, [token])
   const [password, setPassword] = useState('');
   const [user, setUser] = useState<User>();
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -27,15 +35,14 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
     setShowLoginModal(true);
   }, []);
   const logout = useCallback(() => {
-    setLogged(false);
     setUser(undefined);
   }, []);
   const contextValue = useMemo<AuthorizationType>(() => ({
-    logged,
+    logged: !!token,
     user,
     login,
     logout
-  }), [logged, user, login, logout]);
+  }), [token, user, login, logout]);
   return (
     <Context.Provider value={contextValue}>
       <>
@@ -45,9 +52,10 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
           <ModalBody>
             <Form onSubmit={e => {
               e.preventDefault();
-              setLogged(true);
-              setUser({ id: password });
-              setShowLoginModal(false);
+              Axios.post('/api/auth/login', { password }).then(({ data: { token } }) => {
+                setShowLoginModal(false);
+                setToken(token);
+              });
             }}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>

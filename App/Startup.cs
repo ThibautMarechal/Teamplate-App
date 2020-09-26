@@ -1,8 +1,5 @@
 using App.Configuration;
 using App.Services.Auth;
-using App.Services.Mail;
-using App.Services.Storage;
-using App.Services.User;
 using App.Services.UserCreator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,9 +31,8 @@ namespace App
 
       services
         .AddSingleton(templateConfiguration.Auth)
-        .AddSingleton(templateConfiguration.Admin)
-        .AddSingleton(templateConfiguration.Storage)
-        .AddSingleton(templateConfiguration.Mail);
+        .AddSingleton(templateConfiguration.Users)
+        .AddSingleton(templateConfiguration.Database);
 
       //Authentications & Authorizations
       services
@@ -45,10 +41,7 @@ namespace App
       //Services
       services
         .AddScoped<IAuthService, AuthService>()
-        .AddScoped<IStorageService, StorageService>()
-        .AddScoped<IUserService, UserService>()
-        .AddHostedService<UserCreatorService>()
-        .AddScoped<IMailService, MailService>();
+        .AddHostedService<UsersCreatorService>();
 
       //Database
       services.AddDbContext<AppContext>(options =>

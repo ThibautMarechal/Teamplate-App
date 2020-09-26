@@ -11,7 +11,6 @@ namespace App.Mappers
         return null;
       return new User
       {
-        Email = identityUser.Email,
         Username = identityUser.UserName,
       };
     }
@@ -22,7 +21,6 @@ namespace App.Mappers
         return null;
       return new UserWithToken
       {
-        Email = user.Email,
         Username = user.Username,
         Token = token
       };

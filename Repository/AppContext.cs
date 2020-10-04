@@ -5,6 +5,7 @@ namespace Repository
 {
   public class AppContext : IdentityDbContext
   {
+    public AppContext(): base() { }
     public AppContext(DbContextOptions options) : base(options)
     {}
   }

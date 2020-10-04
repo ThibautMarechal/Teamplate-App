@@ -20,11 +20,20 @@ export const useLogout = () => useContext(Context).logout
 export const AuthorizationProvider = ({ children }: { children: JSX.Element }) => {
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useLocalStorage('token', null);
+  if(token)
+    Api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
   useEffect(() => {
-    if(token){
-      Api.defaults.headers.post['Authorization'] = `Bearer ${token}`;
-    }
-  }, [token])
+    Api.interceptors.response.use(response => {
+      console.log((response))
+      return response
+    }, error => {
+      console.log((error))
+      if (error.response.status === 401)
+        setToken(null);
+     return error;
+   });
+  }, [setToken]);
   const username = useMemo<string | undefined>(() => {
     if(token) 
       return jwt_decode<{ unique_name: string }>(token).unique_name;
@@ -62,12 +71,11 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
               });
             }}>
               <FormGroup>
-                <Label for="exampleEmail">Email</Label>
+                <Label for="password">Mot de passe</Label>
                 <Input 
                   type="password" 
                   name="password" 
                   id="password" 
-                  placeholder="Mot de passe" 
                   value={password} 
                   onChange={e => setPassword(e.target.value)}
                   invalid={!!error}

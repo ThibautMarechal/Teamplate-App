@@ -43,7 +43,7 @@ namespace App
         .AddHostedService<UsersCreatorService>();
 
       //Database
-      services.AddDbContext<AppContext>(options =>
+      services.AddDbContext<AppDbContext>(options =>
         options.UseMySql(templateConfiguration.Database.ConnectionString));
 
       // In production, the React files will be served from this directory

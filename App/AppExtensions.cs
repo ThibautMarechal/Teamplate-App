@@ -15,7 +15,7 @@ namespace App
       //Authorizations
       services
         .AddIdentity<IdentityUser, IdentityRole>()
-        .AddEntityFrameworkStores<AppContext>()
+        .AddEntityFrameworkStores<AppDbContext>()
         .AddDefaultTokenProviders();
 
       //Authentications

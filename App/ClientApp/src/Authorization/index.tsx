@@ -24,11 +24,7 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
     Api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
   useEffect(() => {
-    Api.interceptors.response.use(response => {
-      console.log((response))
-      return response
-    }, error => {
-      console.log((error))
+    Api.interceptors.response.use(response => response, error => {
       if (error.response.status === 401)
         setToken(null);
      return error;

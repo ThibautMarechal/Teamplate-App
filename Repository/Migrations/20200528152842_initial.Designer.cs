@@ -8,7 +8,7 @@ using Repository;
 
 namespace Repository.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20200528152842_initial")]
     partial class initial
     {

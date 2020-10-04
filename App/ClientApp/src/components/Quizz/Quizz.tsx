@@ -12,7 +12,7 @@ type Props = {
 }
 
 export default ({ questions }: Props) => {
-  const [play, { stop }] = useSound('./assets/sound/qpuc-intro.mp3');
+  const [play, { stop }] = useSound('./assets/sound/qpuc.mp3');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [activeQuestion, setActiveQuestion] = useState(-1);
@@ -64,10 +64,10 @@ export default ({ questions }: Props) => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="firstName">Nom *</Label>
+                <Label for="lastName">Nom *</Label>
                 <Input
-                  name="firstName"
-                  id="firstName"
+                  name="lastName"
+                  id="lastName"
                   value={lastName}
                   onChange={e => setLastName(e.target.value)}
                 />

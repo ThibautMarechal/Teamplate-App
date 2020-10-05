@@ -12,16 +12,14 @@ export type WeddingEvent = {
 
 export const USERS = {
   AllIN: 'all-in',
-  Vine: 'vine',
   NoCeremony: 'no-ceremony',
   Party: 'party'
 }
 
 export const InvitationPhrases: {[i: string]: string[]} = {
-  [USERS.AllIN]: ['Nous vous invitons à venir célébrer notre union'],
-  [USERS.Vine]: ['Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.', 'Nous vous attendons à partir du vin d’honneur… et jusqu’au bout de la nuit !'],
-  [USERS.NoCeremony]: ['Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.', 'Nous vous invitons à notre vin d’honneur'],
-  [USERS.Party]: ['Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.','Nous vous invitons à venir danser avec nous… jusqu’au bout de la nuit !']
+  [USERS.AllIN]: ['Nous vous invitons à venir célébrer notre union.'],
+  [USERS.NoCeremony]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.', 'Nous vous attendons à partir du vin d’honneur… et jusqu’au bout de la nuit !'],
+  [USERS.Party]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.','Nous vous invitons à venir fêter avec nous dès 21h et jusqu’au bout de la nuit !']
 }
 
 const weddingEvents: WeddingEvent[] = [
@@ -77,9 +75,8 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-drink-alt.png',
     sound: './assets/sound/drink.mp3',
     volume: 1,
-    invited: [USERS.AllIN, USERS.Vine, USERS.NoCeremony],
+    invited: [USERS.AllIN, USERS.NoCeremony],
     invitationPhrases: { 
-      [USERS.Vine]: InvitationPhrases[USERS.Vine],
       [USERS.NoCeremony]: InvitationPhrases[USERS.NoCeremony]
     }
   },

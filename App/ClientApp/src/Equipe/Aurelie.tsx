@@ -13,7 +13,7 @@ const charade: string[] = [
 export default () => {
   return (
     <>
-      <h3>Aurélie Ledomez (Moi en une charade)</h3>
+      <h3>Aurélie Lodomez (Moi en une charade)</h3>
       {charade.map(phrase => (
         <p>{phrase}</p>
       ))}

@@ -5,7 +5,7 @@ import 'react-h5-audio-player/src/styles.scss';
 
 export default () => (
   <AudioPlayer
-    header={<>Bons Papas - <Link to="/equipe/aurelie">Aurélie</Link></>}
+    header={<>Ça alors! Jean-Marie et Oli qui travaillent ensemble! - <Link to="/equipe/aurelie">Aurélie</Link></>}
     autoPlay
     src="/assets/sound/nos-papas.mp3"
   />

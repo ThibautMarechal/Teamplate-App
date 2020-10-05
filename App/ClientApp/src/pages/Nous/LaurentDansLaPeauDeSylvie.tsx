@@ -14,7 +14,6 @@ export default () => (
       <li>Ik zou heel graag een woning eind oktober willen huren, voor 5 personen, met binnenzwembad en in de buurt van Trois-Ponts.</li>
       <li>Laurent : K’est ki dit c’flamouch ? Comprends kedalle mwa ! Allez, on s’voit c’soir hein, tschuss !</li>
       <li>Laurent: Ja wohl hein m’fi ! Un schuss ?</li>
-      <li>Laurent: Ja wohl hein m’fi ! Un schuss ?</li>
     </ul>
     <p>Après cette journée éprouvante, les amoureux furent heureux de se retrouver le soir pour être enfin eux-mêmes et… continuer de plancher sur la construction !</p>
     <p><i>The end</i></p>

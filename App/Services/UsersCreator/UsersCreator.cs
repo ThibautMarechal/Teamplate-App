@@ -38,7 +38,6 @@ namespace App.Services.UserCreator
       if (userManager.Users.Count() == 0)
       {
         await CreateUser(userManager, Users.AllIn, Users.AllInPassword).ConfigureAwait(false);
-        await CreateUser(userManager, Users.Vine, Users.VinePassword).ConfigureAwait(false);
         await CreateUser(userManager, Users.NoCeremony, Users.NoCeremonyPassword).ConfigureAwait(false);
         await CreateUser(userManager, Users.Party, Users.PartyPassword).ConfigureAwait(false);
         await CreateUser(userManager, Users.Demo, Users.DemoPassword).ConfigureAwait(false);

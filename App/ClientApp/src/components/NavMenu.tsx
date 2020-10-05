@@ -31,6 +31,9 @@ export default () => {
                     <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/photos"><img src="./assets/icon-picture.png" alt="photos" width={20}/>Photos</NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink tag={Link} className="text-dark" to="/programme"><img src="./assets/icon-clock.png" alt="laurier" width={20}/>Programme</NavLink>
                   </NavItem>
                   <NavItem>

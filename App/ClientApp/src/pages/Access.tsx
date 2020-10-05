@@ -8,7 +8,7 @@ export default () => {
   return (
     <Container>
       <Row>
-        <Col lg={{ size: 8, offset: 2 }} md={12} style={{ overflow: 'hidden'}}>
+        <Col lg={{ size: 8, offset: 2 }} md={12}>
           <AutoSizer disableHeight>
             {({ width }) => {
               const fontSize = width / 40;
@@ -117,7 +117,7 @@ export default () => {
                                           y: 0.295,
                                           element: (
                                             <div className={styles.direction}>
-                                              <div className={styles.directionRight} style={{ transform: 'rotate(-36deg)', fontSize }}>ButchBach</div>
+                                              <div className={styles.directionRight} style={{ transform: 'rotate(-36deg)', fontSize }}>Butgenbach</div>
                                             </div>
                                           )
                                         },

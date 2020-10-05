@@ -13,6 +13,14 @@ export default () => {
   return (
     <Container>
       <Row>
+        <Col>
+          <p>
+            Sylvie et Laurent se sont amusé à décrire leurs témoins et leur maître de cérémonie de façon origiale.
+            Bonne lecture <span role="img" aria-label="smiley">😉</span>
+          </p>
+        </Col>
+      </Row>
+      <Row>
         <Col md={{ offset: 2, size: 8 }} xs={12}>
           <Route exact path='/equipe'>
             <Row>
@@ -20,10 +28,10 @@ export default () => {
                 <PersonCard name="Fanny" imgUrl="/assets/equipe/fanny.jpg" redirectUrl="/equipe/fanny" />
               </Col>
               <Col md={4} xs={6}>
-                <PersonCard name="Joel" imgUrl="/assets/equipe/joel.png" redirectUrl="/equipe/joel" />
+                <PersonCard name="Joël" imgUrl="/assets/equipe/joel.png" redirectUrl="/equipe/joel" />
               </Col>
               <Col md={4} xs={6}>
-                <PersonCard name="Aurelie" imgUrl="/assets/equipe/aurelie.jpg" redirectUrl="/equipe/aurelie" />
+                <PersonCard name="Aurélie" imgUrl="/assets/equipe/aurelie.jpg" redirectUrl="/equipe/aurelie" />
               </Col>
               <Col md={{ offset: 2, size: 4 }} xs={6}>
                 <PersonCard name="Jennifer" imgUrl="/assets/equipe/jennifer.jpg" redirectUrl="/equipe/jennifer" />

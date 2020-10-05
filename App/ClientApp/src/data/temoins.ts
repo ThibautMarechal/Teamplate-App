@@ -5,7 +5,7 @@ export type Temoin = {
 
 const temoins: Temoin[] = [
   {
-    name: 'Joel',
+    name: 'Joël',
     picture: './assets/joel.png'
   },
   {

@@ -22,6 +22,8 @@ export default () => {
       {!isParticipating ? (
         <Row>
           <Col md={{ offset: 2, size: 8 }} xs={12}>
+            <h2 className="text-primary">Nous connaissiez-vous vraiment ?</h2>
+            <p>Participez à notre quizz! Petite surprise à la clé</p>
             {canParticipate.isLoading ?
               null
               : canParticipate.data === true ?

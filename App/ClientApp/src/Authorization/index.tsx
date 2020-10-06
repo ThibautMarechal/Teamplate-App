@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 import Api from '../Api';
 import { useLocalStorage } from 'react-use'
 import { Modal, ModalHeader, ModalBody, Form, Input, Button, FormGroup, Label, FormFeedback } from 'reactstrap';
+import { AxiosError } from 'axios';
 
 type AuthorizationType = {
   logged: boolean;
@@ -20,14 +21,14 @@ export const useLogout = () => useContext(Context).logout
 export const AuthorizationProvider = ({ children }: { children: JSX.Element }) => {
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useLocalStorage('token', null);
-  if(token)
+  if(token && !Api.defaults.headers.common['Authorization'])
     Api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
   useEffect(() => {
     Api.interceptors.response.use(response => response, error => {
       if (error.response.status === 401)
         setToken(null);
-     return error;
+     return Promise.reject(error);
    });
   }, [setToken]);
   const username = useMemo<string | undefined>(() => {
@@ -61,8 +62,8 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
               Api.post('/api/auth/login', { password }).then(({ data: { token } }) => {
                 setShowLoginModal(false);
                 setToken(token);
-              }).catch(({ response:{ data: { message }} }) => {
-                setError(message);
+              }).catch((e: AxiosError) => {
+                setError(e.response?.data?.message ?? 'Une erreur est survenue');
                 setPassword('');
               });
             }}>

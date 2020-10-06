@@ -15,6 +15,11 @@ const fromClassName: { [i:string]: string } = {
   [TITI]: 'titi'
 }
 
+const Avatars : { [i:string]: string } = {
+  [LEON]: './assets/leon.jpg',
+  [TITI]: './assets/titi.jpg'
+}
+
 const conversation: Response[] = [
   {
     from: LEON,
@@ -70,7 +75,11 @@ export default () => {
       <h3 className="text-primary">Fanny vue par ses chats</h3>
       {conversation.map(response => (
         <div className={cn(styles.response, styles[fromClassName[response.from]])}>
-          <h4>{response.from}{response.emotion ? <span className={styles.emotion}>({response.emotion})</span> : null}</h4>
+          <h4>
+            <img className={styles.avatar} src={Avatars[response.from]} alt="avatar" />
+            {response.from}
+            {response.emotion ? <span className={styles.emotion}>({response.emotion})</span> : null}
+          </h4>
           <div className={styles.message}><span>{response.message}</span></div>
         </div>
       ))}

@@ -1,0 +1,25 @@
+.passport {
+  user-select: none;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(-2deg);
+  .passportInner{
+    position: relative;
+    background-color: cornsilk;
+    padding: 15px;
+    .portrait {
+      margin: 10px;
+      width: 25%;
+      float: left;
+      transform: rotate(1deg);
+    }
+    .seal {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      transform: rotate(42deg);
+      width: 25%;
+      opacity: 0.48;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.fable {
+  p {
+    &::first-letter {
+      font-family: jeff-script;
+      font-size: 1.2em;
+    }
+  }
+}

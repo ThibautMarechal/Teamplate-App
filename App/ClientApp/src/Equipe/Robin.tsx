@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Robin.module.scss'
 
 const passport: { [i: string]: string } = {
   'Nom': 'Di Marzio',
@@ -22,9 +23,15 @@ export default () => {
   return (
     <>
       <h3 className="text-primary">Le passeport de Robin</h3>
-      {Object.entries(passport).map(([key, value]) => (
-        <p>{key} : {value}</p>
-      ))}
+      <div className={styles.passport}>
+        <div className={styles.passportInner}>
+          <img src="./assets/equipe/robin-bg.png" alt="robin" className={styles.portrait} />
+          {Object.entries(passport).map(([key, value]) => (
+            <>{key} : {value}<br /></>
+          ))}
+          <img src="./assets/seal.png" alt="seal" className={styles.seal}/>
+        </div>
+      </div>
     </>
   )
 }

@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styles from './PersonRound.module.scss'
 
 type Props = {
-  redirectUrl: string;
+  redirectUrl?: string;
   imgUrl: string;
   name: string;
-  role: string;
+  role?: JSX.Element;
+  hideDescription?: boolean;
+  style?: CSSProperties
 }
 
-export default ({ redirectUrl, imgUrl, name, role }: Props) => {
+export default ({ redirectUrl, imgUrl, name, role, hideDescription, style }: Props) => {
   const history = useHistory();
+  const handleClick = () => {
+    if(redirectUrl) history.push(redirectUrl)
+  }
   return (
     <>
-      <img src={imgUrl} onClick={() => history.push(redirectUrl)} alt={name} />
-      <Link to={redirectUrl}><span className={styles.name}>{name}</span></Link>
-      <span className={styles.role}>{role}</span>
+      <img className={styles.img} src={imgUrl} onClick={handleClick} alt={name} title={name} style={style} />
+      {!hideDescription && (
+        <div className={styles.description}>
+          {redirectUrl ? (
+            <Link to={redirectUrl}><span className={styles.name}>{name}</span></Link>
+          ) : (
+            <span className={styles.name}>{name}</span>
+          )}
+          <span className={styles.role}>{role}</span>
+        </div>
+      )}
     </>
   );
 }

@@ -1,9 +1,14 @@
 .response{
+  margin-top: 10px;
   &.titi {
     text-align: right;
     .message {
       background-color: azure;
       border-radius: 15px 0px 15px 15px;
+    }
+    .avatar {
+      float: right;
+      margin-left: 10px;
     }
   }
   &.leon {
@@ -13,6 +18,10 @@
       color: white;
       border-radius: 0px 15px 15px 15px;
     }
+    .avatar {
+      float: left;
+      margin-right: 10px;
+    }
   }
   .emotion {
     font-size: 0.65em;
@@ -20,5 +29,9 @@
   }
   .message {
     padding: 10px;
+  }
+  .avatar {
+    width: 60px;
+    border-radius: 50%;
   }
 }

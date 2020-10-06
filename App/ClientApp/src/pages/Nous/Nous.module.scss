@@ -1,0 +1,11 @@
+.aneContainer {
+  position: relative;
+  margin-top: 35px;
+  .bonnetAne{
+    width: 60px;
+    position: absolute;
+    top: -30px;
+    left: 15px;
+    transform: rotate(32deg);
+  }
+}

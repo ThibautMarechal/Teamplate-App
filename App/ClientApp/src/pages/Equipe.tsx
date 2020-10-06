@@ -6,38 +6,43 @@ import Joel from '../Equipe/Joel';
 import Aurelie from '../Equipe/Aurelie';
 import Robin from '../Equipe/Robin';
 import Jennifer from '../Equipe/Jennifer';
-import PersonCard from '../components/PersonCard';
 import Retour from '../components/Retour';
+import PersonRound from '../components/PersonRound';
+
+const TEMOIN = <><img src="./assets/icon-sign.png" width={20} alt="Témoin"/>Témoin</>
+const ORGANISATRICE = <><img src="./assets/icon-clock.png" width={20} alt="Organisatrice"/>Organisatrice</>
 
 export default () => {
   return (
     <Container>
-      <Row>
-        <Col>
-          <p>
-            Sylvie et Laurent se sont amusé à décrire leurs témoins et leur maître de cérémonie de façon origiale.
-            Bonne lecture <span role="img" aria-label="smiley">😉</span>
-          </p>
-        </Col>
-      </Row>
+      <Route exact path='/equipe'>
+        <Row>
+          <Col>
+            <p>
+              Sylvie et Laurent se sont amusé à décrire leurs témoins et leur maître de cérémonie de façon origiale.
+              Bonne lecture <span role="img" aria-label="smiley">😉</span>
+            </p>
+          </Col>
+        </Row>
+      </Route>
       <Row>
         <Col md={{ offset: 2, size: 8 }} xs={12}>
           <Route exact path='/equipe'>
             <Row>
-              <Col md={4} xs={6}>
-                <PersonCard name="Fanny" imgUrl="/assets/equipe/fanny.jpg" redirectUrl="/equipe/fanny" />
+              <Col xs={6}>
+                <PersonRound name="Fanny" imgUrl="/assets/equipe/fanny.jpg" redirectUrl="/equipe/fanny" role={TEMOIN} />
               </Col>
-              <Col md={4} xs={6}>
-                <PersonCard name="Joël" imgUrl="/assets/equipe/joel.png" redirectUrl="/equipe/joel" />
+              <Col xs={6}>
+                <PersonRound name="Joël" imgUrl="/assets/equipe/joel.png" redirectUrl="/equipe/joel" role={TEMOIN}  />
               </Col>
-              <Col md={4} xs={6}>
-                <PersonCard name="Aurélie" imgUrl="/assets/equipe/aurelie.jpg" redirectUrl="/equipe/aurelie" />
+              <Col xs={6}>
+                <PersonRound name="Aurélie" imgUrl="/assets/equipe/aurelie.jpg" redirectUrl="/equipe/aurelie" role={TEMOIN}  />
               </Col>
-              <Col md={{ offset: 2, size: 4 }} xs={6}>
-                <PersonCard name="Jennifer" imgUrl="/assets/equipe/jennifer.jpg" redirectUrl="/equipe/jennifer" />
+              <Col xs={6}>
+                <PersonRound name="Robin" imgUrl="/assets/equipe/robin.jpg" redirectUrl="/equipe/robin" role={TEMOIN}  />
               </Col>
-              <Col md={{ offset: 0, size: 4 }} xs={{ offset: 3, size: 6 }}>
-                <PersonCard name="Robin" imgUrl="/assets/equipe/robin.jpg" redirectUrl="/equipe/robin" />
+              <Col md={{ offset: 3, size: 6 }} xs={6}>
+                <PersonRound name="Jennifer" imgUrl="/assets/equipe/jennifer.jpg" redirectUrl="/equipe/jennifer" role={ORGANISATRICE} />
               </Col>
             </Row>
           </Route>

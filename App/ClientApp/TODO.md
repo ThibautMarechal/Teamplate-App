@@ -21,22 +21,21 @@ x Ajouter de annotations sur la map
 
 
 x un peu d'espace entre le pilier et le texte
-- Rajouter bulle de chat chat
-- Bulles > like bajj.be
-- Roles 
-  stylo témoine
-  montre Jen
+x Bulles > like bajj.be
+x Roles 
+x  stylo témoine
+x  montre Jen
 
-- Presentation Aurelie => Thinking
+x Presentation Aurelie => Thinking
 - Présentation Joel => Grande calligraphie 
-- Ecrit par => Auteur
-- Image de Robin
+x Ecrit par => Auteur
+x Image de Robin
 - Dessin Fanny => Cadre / livret
 
-- Programme = texte spécifique à l'user plus grand
+x Programme = texte spécifique à l'user plus grand
 
-- carte 
+x carte 
   remove Maison communale if not allin 
   if not => add malmedy + Waimes info
 
-- concours 
+x Rajouter bulle de chat chat

@@ -16,8 +16,13 @@ const constructionPhotosInCarrousel = [
   '/assets/article-construction/image15.jpeg',
   '/assets/article-construction/image16.jpeg',
   '/assets/article-construction/image17.jpeg',
-  '/assets/article-construction/image18.jpeg',
-  '/assets/article-construction/image19.jpeg'
+  '/assets/article-construction/image18.jpg',
+  '/assets/article-construction/image19.jpg',
+  '/assets/article-construction/image20.jpg',
+  '/assets/article-construction/image21.jpg',
+  '/assets/article-construction/image22.jpg',
+  '/assets/article-construction/image23.jpg',
+  '/assets/article-construction/image24.jpg'
 ]
 
 export default () => {

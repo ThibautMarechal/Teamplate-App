@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
 import styles from './InteractiveMap.module.scss';
 
-type subMaps = {
+export type SubMaps = {
   x: number;
   y: number;
   map: Map;
 }
 
-type Map = {
+export type Map = {
   src: string;
-  subMaps?: subMaps[];
+  subMaps?: SubMaps[];
   pointOfInterests?: PointOfInterest[]
 }
 
-type PointOfInterest = {
+export type PointOfInterest = {
   x: number;
   y: number;
   element: JSX.Element;
 }
 
-type Props = {
+export type Props = {
   depth: number;
   onZoomOut: () => void;
 } & Map;

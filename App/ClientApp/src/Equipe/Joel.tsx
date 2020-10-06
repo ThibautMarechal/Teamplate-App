@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Joel.module.scss'
 
 const fable: string[] = [
   'Maître Joël sur un chémel perché',
@@ -24,9 +25,11 @@ export default () => {
   return (
     <>
       <h3 className="text-primary">Joël en une fable</h3>
-      {fable.map(vers => (
-        <p>{vers}</p>
-      ))}
+      <div className={styles.fable}>
+        {fable.map(vers => (
+          <p>{vers}</p>
+        ))}
+      </div>
     </>
   )
 }

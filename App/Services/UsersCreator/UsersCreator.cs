@@ -41,6 +41,7 @@ namespace App.Services.UserCreator
         await CreateUser(userManager, Users.NoCeremony, Users.NoCeremonyPassword).ConfigureAwait(false);
         await CreateUser(userManager, Users.Party, Users.PartyPassword).ConfigureAwait(false);
         await CreateUser(userManager, Users.Demo, Users.DemoPassword).ConfigureAwait(false);
+        await CreateUser(userManager, Users.Joel, Users.JoelPassword).ConfigureAwait(false);
       }
     }
 

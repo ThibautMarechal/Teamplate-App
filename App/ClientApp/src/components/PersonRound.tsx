@@ -22,9 +22,9 @@ export default ({ redirectUrl, imgUrl, name, role, hideDescription, style }: Pro
       {!hideDescription && (
         <div className={styles.description}>
           {redirectUrl ? (
-            <Link to={redirectUrl}><span className={styles.name}>{name}</span></Link>
+            <Link to={redirectUrl}><h4 className={styles.name}>{name}</h4></Link>
           ) : (
-            <span className={styles.name}>{name}</span>
+            <h4 className={styles.name}>{name}</h4>
           )}
           <span className={styles.role}>{role}</span>
         </div>

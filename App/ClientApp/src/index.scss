@@ -16,10 +16,17 @@ $second: #0a2155;
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
-  // font-family: jeff-scripts;
+  // font-family: jeff-script;
   // font-family: politica-bold;
   background-image: url('/assets/background.jpg');
   background-size: 100%;
   font-weight: bold;
   //background-color: #c3af87
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: jeff-script;
+}
+nav {
+  font-family: jeff-script;
+  font-size: 1.2em;
 }

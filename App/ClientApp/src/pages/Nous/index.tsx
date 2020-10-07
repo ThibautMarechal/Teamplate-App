@@ -9,6 +9,10 @@ import LesPapas from './LesPapas';
 import OrganisationMariage from './OrganisationMariage';
 import SylvieLaurentChat from './SylvieLaurentChat';
 import styles from './Nous.module.scss'
+import { useUsername } from '../../Authorization';
+import { USERS } from '../../data/weddingEvents';
+// @ts-ignore
+import useCountdown from 'react-use-countdown';
 
 const AURELIE = <PersonRound name="Aurélie" imgUrl="./assets/equipe/aurelie.jpg" hideDescription style={{ width: 60, marginRight: 10 }} />
 const ROBIN = <PersonRound name="Robin" imgUrl="./assets/equipe/robin.jpg" hideDescription style={{ width: 60, marginRight: 10 }} />
@@ -21,56 +25,82 @@ const JOEL = (
   </div>
 )
 export default () => {
+  const username = useUsername() || USERS.Joel;
+  const countdown = useCountdown(() => Date.parse('2020-10-11T21:00:00+01:00'));
+  const jours = Math.trunc(countdown / 1000 / 60 / 60 / 24);
+  const heures = Math.trunc(countdown / 1000 / 60 / 60) - jours * 24;
+  const minutes = Math.trunc(countdown / 1000 / 60) - (jours * 24) - (heures * 60);
+  const secondes = Math.trunc(countdown / 1000) - (jours * 24) - (heures * 60) - (minutes * 60);
   return (
     <Container>
       <Route exact path='/nous'>
         <Row>
           <Col md={{ offset: 2, size: 8 }} xs={12}>
-            <p>
-              Nous avons demandé à nos témoins de nous représenter de diverse manières avec des dessins, textes, croquis, chansons,... avec une dose d'humour.<br />
-              Des rires et peut-être des découverte au rendez-vous <span role="img" aria-label="smiley">😉</span>
+            <p className={styles.description}>
+              Nous avons demandé à nos témoins de nous représenter de diverses manières avec des dessins, textes, croquis, chansons,... assaisonnés une dose d'humour.<br />
+              Des rires et peut-être des découvertes au rendez-vous <span role="img" aria-label="smiley">😉</span>
             </p>
+            <hr />
           </Col>
         </Row>
       </Route>
       <Row>
-        <Col md={{ offset: 2, size: 8 }} xs={12}>
+        <Col md={{ offset: 1, size: 10 }} xs={12}>
           <Route exact path='/nous'>
-            <NavLink tag={Link} to="/nous/laurent-dans-la-peau-de-sylvie">
-              {ROBIN}
+            <h3>
+              <NavLink tag={Link} to="/nous/laurent-dans-la-peau-de-sylvie">
+                {ROBIN}
               L'histoire passionnante de Laurent dans la peau de Sylvie et vice-versa
+              </NavLink>
+            </h3>
+            <h3>
+              <NavLink tag={Link} to="/nous/construction">
+                {FANNY}
+              La construction
             </NavLink>
-            <NavLink tag={Link} to="/nous/construction">
-              {FANNY}
-              Construction
-            </NavLink>
-            <NavLink tag={Link} to="/nous/organization-mariage">
-              {JENNIFER}
-              L’organisation du mariage
-            </NavLink>
-            <NavLink tag={Link} to="/nous/sylvie-laurent-chat">
-              {FANNY}
-              La demande en mariage
-            </NavLink>
-            <NavLink tag={Link} to="/nous/les-papas">
-              {AURELIE}
-              Les papas
-            </NavLink>
-            <NavLink tag={Link} to="/equipe/joel">
-              {JOEL}
-            </NavLink>
+            </h3>
+            <h3>
+              <NavLink tag={Link} to="/nous/organization-mariage">
+                {JENNIFER}
+                L’organisation du mariage
+              </NavLink>
+            </h3>
+            <h3>
+              <NavLink tag={Link} to="/nous/sylvie-laurent-chat">
+                {FANNY}
+                La demande en mariage
+              </NavLink>
+            </h3>
+            <h3>
+              <NavLink tag={Link} to="/nous/les-papas">
+                {AURELIE}
+                Les papas
+              </NavLink>
+            </h3>
+            {username === USERS.Joel && (
+              <>
+                <h3>
+                  <NavLink tag={Link} to="/equipe/joel">
+                    {JOEL} 
+                  </NavLink>
+                </h3>
+                <p>Il reste {jours} jours, {heures} heures, {minutes} minutes, {secondes} secondes pour remettre votre présenation avant le changement de témoin ! 😜 😈</p>
+              </>
+            )}
           </Route>
           <Route path='/nous/laurent-dans-la-peau-de-sylvie'>
             <Retour to="/nous" />
-            <h3 className="text-primary">L'histoire passionnante de Laurent dans la peau de Sylvie et vice-versa</h3>
+            <h1 className="text-primary">L'histoire passionnante de Laurent dans la peau de Sylvie et vice-versa</h1>
+            <hr />
             <LaurentDansLaPeauDeSylvie />
-            <Retour to="/nous" />
+            <Retour to="/nous" hrBefore />
             Auteur: <Link to="/equipe/robin">{ROBIN} Robin</Link>
             <hr />
           </Route>
           <Route path='/nous/construction'>
             <Retour to="/nous" />
-            <h3 className="text-primary">Construction</h3>
+            <h1 className="text-primary">La construction</h1>
+            <hr />
             <Construction />
             <Retour to="/nous" hrBefore />
             Auteur: <Link to="/equipe/fanny">{FANNY} Fanny</Link>
@@ -78,7 +108,8 @@ export default () => {
           </Route>
           <Route path='/nous/organization-mariage'>
             <Retour to="/nous" />
-            <h3 className="text-primary">L’organisation du mariage</h3>
+            <h1 className="text-primary">L’organisation du mariage</h1>
+            <hr />
             <OrganisationMariage />
             <Retour to="/nous" hrBefore />
             Auteur: <Link to="/equipe/jennifer">{JENNIFER} Jennifer</Link>
@@ -86,7 +117,8 @@ export default () => {
           </Route>
           <Route path='/nous/sylvie-laurent-chat'>
             <Retour to="/nous" />
-            <h3 className="text-primary">La demande en mariage</h3>
+            <h1 className="text-primary">La demande en mariage</h1>
+            <hr />
             <SylvieLaurentChat />
             <hr />
             Auteur: <Link to="/equipe/fanny">{FANNY} Fanny</Link>

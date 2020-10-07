@@ -1,8 +1,8 @@
 .fable {
-  p {
-    &::first-letter {
-      font-family: jeff-script;
-      font-size: 1.2em;
-    }
+  line-height: 1.75em;
+  .m{
+    float: left;
+    shape-outside: url('/assets/m2.png');
+    width: 15em;
   }
 }

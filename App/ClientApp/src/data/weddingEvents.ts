@@ -14,14 +14,16 @@ export const USERS = {
   AllIN: 'all-in',
   NoCeremony: 'no-ceremony',
   Party: 'party',
-  Demo: 'demo'
+  Demo: 'demo',
+  Joel: 'joel',
 }
 
 export const InvitationPhrases: {[i: string]: string[]} = {
   [USERS.AllIN]: ['Nous vous invitons à venir célébrer notre union.'],
   [USERS.NoCeremony]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.', 'Nous vous attendons à partir du vin d’honneur… et jusqu’au bout de la nuit !'],
   [USERS.Party]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.','Nous vous invitons à venir fêter avec nous dès 21h et jusqu’au bout de la nuit !'],
-  [USERS.Demo]: ['Tu n\'es pas invité !', 'Tu n\'es que l\'utilisateur de démo']
+  [USERS.Demo]: ['Tu n\'es pas invité !', 'Tu n\'es que l\'utilisateur de démo'],
+  [USERS.Joel]: ['Nous vous invitons à venir célébrer notre union.'],
 }
 
 const weddingEvents: WeddingEvent[] = [

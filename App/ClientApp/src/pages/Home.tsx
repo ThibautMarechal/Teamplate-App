@@ -24,15 +24,15 @@ export default () => {
       <Row>
         <Col xs={12} md={{ size: 6, offset: 3}}>
           <img src="./assets/voute.png" alt="voute" className={style.vouteImg}/>
-          <h2 className={cn(style.title, "text-primary")}>On se marie!</h2>
+            <h2 className={cn(style.title, "text-primary")}>On se marie!</h2>
             Après onze années d'amour<br/>
             Des aventures que vous avez pu suivre de près ou de loin<br/>
             La construction de notre nid douillet<br/>
             Il était temps de se dire<br/>
-            <h4 className={cn("text-primary", style.highlightRight)} onMouseEnter={() => play()} onMouseLeave={() => stop()}>OUI</h4>
+            <h2 className={cn("text-primary", style.highlightRight)} onMouseEnter={() => play()} onMouseLeave={() => stop()}>Oui</h2>
             C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
             Nous nous marions<br/><br />
-            <h4 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h4>
+            <h2 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h2>
         </Col>
       </Row>
     </Container>

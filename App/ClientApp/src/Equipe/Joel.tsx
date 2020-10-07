@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Joel.module.scss'
 
 const fable: string[] = [
-  'Maître Joël sur un chémel perché',
+  'aître Joël sur un chémel perché',
   'Tenait en ses mains un breuvage',
   'Maître traquenard, par l’odeur alléché',
   'Lui tint à peu près ce langage :',
@@ -26,9 +26,12 @@ export default () => {
     <>
       <h3 className="text-primary">Joël en une fable</h3>
       <div className={styles.fable}>
+      <p>
+        <img src="./assets/m.png" alt="m" className={styles.m}/>
         {fable.map(vers => (
-          <p>{vers}</p>
+          <>{vers}<br /></>
         ))}
+      </p>
       </div>
     </>
   )

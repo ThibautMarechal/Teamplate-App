@@ -14,7 +14,7 @@ const passport: { [i: string]: string } = {
   'Situation amoureuse': 'En quatuor avec : Géraldine, le saxophone et un piano',
   'Caractéristique': 'Investi et fier de tout ce qu’il entreprend',
   'Activité': 'Guindailleur aguerri',
-  'Résidence': 'secondaire : Le canapé des futurs mariés',
+  'Résidence secondaire ': 'Le canapé des futurs mariés',
   'Dress code': 'Belles chemises à fleurs',
   'Misson': 'Témoin de l’autre pingouin'
 }

@@ -30,7 +30,6 @@ x Presentation Aurelie => Thinking
 - Présentation Joel => Grande calligraphie 
 x Ecrit par => Auteur
 x Image de Robin
-- Dessin Fanny => Cadre / livret
 
 x Programme = texte spécifique à l'user plus grand
 
@@ -39,3 +38,9 @@ x carte
   if not => add malmedy + Waimes info
 
 x Rajouter bulle de chat chat
+
+- dessin plus petit + cadre
+- passeport gras tire + value slim
+- son pour bonne ou mauvaise réponse
+- 2px marginRight nav
+- JOEL attention ! !

@@ -10,18 +10,20 @@ import Retour from '../components/Retour';
 import PersonRound from '../components/PersonRound';
 
 const TEMOIN = <><img src="./assets/icon-sign.png" width={20} alt="Témoin"/>Témoin</>
-const ORGANISATRICE = <><img src="./assets/icon-clock.png" width={20} alt="Organisatrice"/>Organisatrice</>
+const ORGANISATRICE = <><img src="./assets/icon-clock.png" width={20} alt="Organisatrice"/>Maître de cérémonie</>
 
 export default () => {
   return (
     <Container>
       <Route exact path='/equipe'>
         <Row>
-          <Col>
+          <Col md={{ offset: 3, size: 6 }} xs={12}>
+            <hr />
             <p>
               Sylvie et Laurent se sont amusé à décrire leurs témoins et leur maître de cérémonie de façon origiale.
               Bonne lecture <span role="img" aria-label="smiley">😉</span>
             </p>
+            <hr />
           </Col>
         </Row>
       </Route>

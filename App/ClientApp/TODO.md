@@ -39,8 +39,8 @@ x carte
 
 x Rajouter bulle de chat chat
 
-- dessin plus petit + cadre
-- passeport gras tire + value slim
-- son pour bonne ou mauvaise réponse
-- 2px marginRight nav
-- JOEL attention ! !
+x dessin plus petit + cadre
+x passeport gras tire + value slim
+x son pour bonne ou mauvaise réponse
+x 2px marginRight nav
+x JOEL attention ! !

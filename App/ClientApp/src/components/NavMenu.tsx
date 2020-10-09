@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, Form, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import style from './NavMenu.module.scss';
 import { useLogged, useLogin } from '../Authorization';
 
@@ -14,6 +14,12 @@ export default () => {
     setNavCollapsed(v => !v)
   }, []);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    setNavCollapsed(true);
+  }, [location.pathname])
+
   return (
     <header>
       <Navbar className={cn("navbar-expand-sm navbar-toggleable-sm ng-white box-shadow mb-3 border-primary", style.nav)} light>
@@ -25,22 +31,22 @@ export default () => {
               {logged ? (
                 <>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/equipe"><img src="./assets/icon-sign.png" alt="equipe" width={20} style={{ marginRight: 2}}/>Notre équipe</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/equipe"><img src="./assets/icon-sign.png" alt="equipe" width={20} style={{ marginRight: 2}} />Notre équipe</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20}/>Nous</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/nous"><img src="./assets/coeurs.png" alt="temoins" width={20} style={{ marginRight: 2}} />Nous</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/photos"><img src="./assets/icon-picture.png" alt="photos" width={20}/>Photos</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/photos"><img src="./assets/icon-picture.png" alt="photos" width={20} style={{ marginRight: 2}} />Photos</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/programme"><img src="./assets/icon-clock.png" alt="laurier" width={20}/>Programme</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/programme"><img src="./assets/icon-clock.png" alt="laurier" width={20} style={{ marginRight: 2}} />Programme</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/acces"><img src="./assets/icon-world.png" alt="world" width={20}/>Accès</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/acces"><img src="./assets/icon-world.png" alt="world" width={20} style={{ marginRight: 2}} />Accès</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/concours"><img src="./assets/icon-concours.png" alt="laurier" width={20}/>Concours</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/concours"><img src="./assets/icon-concours.png" alt="laurier" width={20} style={{ marginRight: 2}} />Concours</NavLink>
                   </NavItem>
                 </>
               ): (

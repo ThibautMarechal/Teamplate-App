@@ -45,7 +45,7 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
     setToken(null);
   }, [setToken]);
   const contextValue = useMemo<AuthorizationType>(() => ({
-    logged: !!token || true,
+    logged: !!token,
     username,
     login,
     logout

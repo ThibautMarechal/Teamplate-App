@@ -27,7 +27,7 @@ export default () => {
         <div className={styles.passportInner}>
           <img src="./assets/equipe/robin-bg.png" alt="robin" className={styles.portrait} />
           {Object.entries(passport).map(([key, value]) => (
-            <>{key} : {value}<br /></>
+            <>{key} : <span className={styles.passValue}>{value}</span><br /></>
           ))}
           <img src="./assets/seal.png" alt="seal" className={styles.seal}/>
         </div>

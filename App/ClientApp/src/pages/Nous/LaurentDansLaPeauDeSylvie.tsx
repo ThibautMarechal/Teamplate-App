@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'reactstrap';
 
 export default () => (
   <>
@@ -15,5 +16,9 @@ export default () => (
     </ul>
     <p>Après cette journée éprouvante, les amoureux furent heureux de se retrouver le soir pour être enfin eux-mêmes et… continuer de plancher sur la construction !</p>
     <p><i>The end</i></p>
+    <Row>
+      <Col md={6} xs={12}><img src="./assets/lps1.png" alt="" style={{ width: '100%'}}/></Col>
+      <Col md={6} xs={12}><img src="./assets/lps2.jpeg" alt="" style={{ width: '100%'}}/></Col>
+    </Row>
   </>
 )

@@ -26,11 +26,11 @@ const JOEL = (
 )
 export default () => {
   const username = useUsername() || USERS.Joel;
-  const countdown = useCountdown(() => Date.parse('2020-10-11T21:00:00+01:00'));
-  const jours = Math.trunc(countdown / 1000 / 60 / 60 / 24);
-  const heures = Math.trunc(countdown / 1000 / 60 / 60) - jours * 24;
-  const minutes = Math.trunc(countdown / 1000 / 60) - (jours * 24) - (heures * 60);
-  const secondes = Math.trunc(countdown / 1000) - (jours * 24) - (heures * 60) - (minutes * 60);
+  const countdown = useCountdown(() => Date.parse('2020-10-11T12:00:00+01:00'));
+  const jours = Math.floor(countdown / 1000 / 60 / 60 / 24);
+  const heures = Math.floor(countdown / 1000 / 60 / 60) - (jours * 24);
+  const minutes = Math.floor(countdown / 1000 / 60) - (jours * 24 * 60) - (heures * 60);
+  const secondes = Math.floor(countdown / 1000) - (jours * 24 * 60 * 60) - (heures * 60 * 60) - (minutes * 60);
   return (
     <Container>
       <Route exact path='/nous'>
@@ -84,7 +84,12 @@ export default () => {
                     {JOEL} 
                   </NavLink>
                 </h3>
-                <p>Il reste {jours} jours, {heures} heures, {minutes} minutes, {secondes} secondes pour remettre votre présenation avant le changement de témoin ! 😜 😈</p>
+                <p>Il reste&nbsp;
+                  {jours > 0 ? `${jours} jour${jours > 1 ? 's' : ''}` : null}&nbsp;
+                  {heures > 0 ? `${heures} heure${heures > 1 ? 's' : ''}` : null}&nbsp;
+                  {minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : null}&nbsp;
+                  {secondes > 0 ? `${secondes} seconde${secondes > 1 ? 's' : ''}` : null}&nbsp;
+                  pour remettre votre présentation avant le changement de témoin ! 😜 😈</p>
               </>
             )}
           </Route>

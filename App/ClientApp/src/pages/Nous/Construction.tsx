@@ -64,7 +64,7 @@ export default () => {
       Ici:
       </p>
       <img src="/assets/article-construction/image1.png" alt="1" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
-      <p>Un jeune couple, enfin, plutôt un vieux couple de jeunes, eu le coup de cœur et décida d’y construire son nid. Car oui, Sylvie et Laurent sont jeunes mais leur couple dure depuis 10 ans.</p>
+      <p>Un jeune couple, enfin, plutôt un vieux couple de jeunes, eu le coup de cœur et décida d’y construire son nid. Car oui, Sylvie et Laurent sont jeunes mais leur couple dure depuis 11 ans.</p>
       <p>Quel endroit idéal, à 2 minutes à pied pour Laurent et proche d’une excellente pâtisserie pour Sylvie, sans parler des nombreux restos pour ce couple épicurien.</p>
       <p>Il y a des chats dans le quartier dont Sylvie a vite fait la connaissance. Certains n’hésiteront pas à marquer leur passage dans la chape toute fraiche.</p>
       <img src="/assets/article-construction/image2.jpeg" alt="2" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
@@ -73,7 +73,7 @@ export default () => {
       <p>Cookie participe aussi aux plans, devis, travaux sur l’ordinateur, mais à sa manière !</p>
       <img src="/assets/article-construction/image4.jpeg" alt="4" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <p>On vous a déjà dit que Laurent a construit 3 maisons ? Il n’était plus à une maison près et ils décidèrent de construire eux-mêmes la maison de leur rêve. Quel projet ! </p>
-      <p>À la force de leur bras, Laurent, Sylvie, et leur famille suivirent les directives minutieuses de Laurent. Quelle équipe !</p>
+      <p>À la force de leurs bras, Laurent, Sylvie, et leur famille suivirent les directives minutieuses de Laurent. Quelle équipe !</p>
       <img src="/assets/article-construction/image5.jpeg" alt="5" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <p>Heureusement qu’il y a quelques pauses bien méritées durant le chantier. On dit merci aux mamans pour les bons dîners, gouters et soupers.</p>
       <img src="/assets/article-construction/image6.jpeg" alt="6" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />

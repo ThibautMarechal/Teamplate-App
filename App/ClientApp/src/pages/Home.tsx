@@ -5,7 +5,7 @@ import style from './Home.module.scss';
 import useSound from 'use-sound';
 
 export default () => {
-  const [play, { stop }] = useSound('./assets/sound/ring.mp3', { volume: 0.2 });
+  const [play, { stop }] = useSound('./assets/sound/oui-devos.mp3', { volume: 0.2 });
 
   return (
     <Container className={style.main}>

@@ -57,7 +57,7 @@ const weddingEvents: WeddingEvent[] = [
     description: 'Cérémonie laïque à l\'Abbaye de Stavelot',
     icon: './assets/icon-ring.png',
     iconAlt: './assets/icon-ring-2.png',
-    sound: './assets/sound/ring.mp3',
+    sound: './assets/sound/oui-devos.mp3',
     volume: 0.2,
     invited: [USERS.AllIN],
     invitationPhrases: {}

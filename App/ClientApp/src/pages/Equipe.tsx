@@ -20,7 +20,7 @@ export default () => {
           <Col md={{ offset: 3, size: 6 }} xs={12}>
             <hr />
             <p>
-              Sylvie et Laurent se sont amusé à décrire leurs témoins et leur maître de cérémonie de façon origiale.
+              Sylvie et Laurent se sont amusés à décrire leurs témoins et leur maître de cérémonie de façon originale.
               Bonne lecture <span role="img" aria-label="smiley">😉</span>
             </p>
             <hr />

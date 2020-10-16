@@ -30,7 +30,7 @@ export default () => {
             La construction de notre nid douillet<br/>
             Il était temps de se dire<br/>
             <h2 className={cn("text-primary", style.highlightRight)} onMouseEnter={() => play()} onMouseLeave={() => stop()}>Oui</h2>
-            C'est avec emotion que nous vous invitons à venir partager une journée de bonheur.<br/>
+            C'est avec émotion que nous vous invitons à venir partager une journée de bonheur.<br/>
             Nous nous marions<br/><br />
             <h2 className={cn("text-primary", style.highlightRight)}>le 23 janvier 2021</h2>
         </Col>

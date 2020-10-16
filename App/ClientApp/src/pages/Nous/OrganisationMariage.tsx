@@ -12,9 +12,10 @@ export default () => {
       <img src="/assets/article-jen/image3.jpeg" alt="3" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <img src="/assets/article-jen/image4.jpeg" alt="4" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <h2 className="text-primary">Le défilé de robes de mariées</h2>
-      <p>Soirée filles à l’occasion d'un défilé de robes de mariés. La magie était au rendez-vous et les étoiles brillent dans les yeux de notre future mariée! <span role="img" aria-label="coeurs">🥰</span> « le tête-à-tête »</p>
+      <p>Soirée filles à l’occasion d'un défilé de robes de mariés. La magie était au rendez-vous et les étoiles brillent dans les yeux de notre future mariée! <span role="img" aria-label="coeurs">😍</span></p>
+      <h2 className="text-primary">Le tête-à-tête</h2>
       <p>Ben oui, un tête à tête "future mariée - weddingplanneuse". Qui a dit qu’il fallait être sérieuse pour faire du bon boulot ?! 1e réunion pour définir les attentes de Sylvie et notre façon de travailler pour la suite des événements.<br />
-      Non non, je n’ai pas oublié Laurent… c’est juste qu’à part la construction rein ne semble le préoccuper. Faut donc pas trop l’attendre </p>
+      Non non, je n’ai pas oublié Laurent… c’est juste qu’à part la construction rien ne semble le préoccuper. Faut donc pas trop l’attendre </p>
       <img src="/assets/article-jen/image5.jpeg" alt="5" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <h2 className="text-primary">Phase inspiration</h2>
       <p>Très vite, Pinterest est devenu notre meilleur ami! Il n'y a pas de limites dans la recherche d'inspiration. Pourtant Sylvie parvient rapidement à définir le cadre et le thème pour le mariage de ses rêves. Quant au lieu, le choix n'est pas évident tout de suite... on s'en tiendra néanmoins à un mariage "dans la région"</p>
@@ -37,7 +38,7 @@ export default () => {
       <h2 className="text-primary">La Suite de Sylvie</h2>
       <p>Samedi 20 juin, J-7 mois, les magasins ont rouvert leurs portes, sous des conditions adaptées, Covid-19 oblige. Cela n'empêche qu'on se retrouve pour les essayages des robes de la suite (partie 1) On essaie plein de robes, plusieurs coloris. On pense avoir trouvé ce qu'il nous faut, mais on hésite. On fait mettre de côté, on va dans une 2e boutique. Bah, finalement non, la 1e était mieux. On retourne à la 1e boutique. Bref, une super journée shopping entre filles.</p>
       <p>Un mois plus tard, c’était au tour de la 2e partie d’aller choisir leurs tenues. Moi je vous dis, qu’elles sont canon !</p>
-      <p>Par contre Laurent, il serait temps que tu t'y mettes aussi la ;) L’équipe des filles à pris de l’avance la. <span role="img" aria-label="smiley">😛</span></p>
+      <p>Par contre Laurent, il serait temps que tu t'y mettes aussi la ;) L’équipe des filles à pris de l’avance. <span role="img" aria-label="smiley">😛</span></p>
       <img src="/assets/article-jen/image16.png" alt="16" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <img src="/assets/article-jen/image17.png" alt="17" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />
       <img src="/assets/article-jen/image18.jpeg" alt="18" style={{ maxWidth: '100%', maxHeight: '70vh', margin: 5 }} />

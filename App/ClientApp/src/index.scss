@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: loveable;
+  src: url('./loveable.ttf');
+}
+
+@font-face {
   font-family: politica-bold;
   src: url('./politica-bold.ttf');
 }
@@ -25,9 +30,9 @@ body {
   //background-color: #c3af87
 }
 h1,h2,h3,h4,h5,h6{
-  font-family: jeff-script;
+  font-family: jeff-script, loveable, sans-serif;
 }
 nav {
-  font-family: jeff-script;
+  font-family: jeff-script, loveable, sans-serif;
   font-size: 1.2em;
 }

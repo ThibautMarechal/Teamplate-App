@@ -6,24 +6,6 @@ export type WeddingEvent = {
   iconAlt: string;
   sound: string;
   volume: number;
-  invited: string[];
-  invitationPhrases: {[i: string]: string[]};
-}
-
-export const USERS = {
-  AllIN: 'all-in',
-  NoCeremony: 'no-ceremony',
-  Party: 'party',
-  Demo: 'demo',
-  Joel: 'joel',
-}
-
-export const InvitationPhrases: {[i: string]: string[]} = {
-  [USERS.AllIN]: ['Nous vous invitons à venir célébrer notre union.'],
-  [USERS.NoCeremony]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.', 'Nous vous attendons à partir du vin d’honneur… et jusqu’au bout de la nuit !'],
-  [USERS.Party]: ['* Les cérémonies civile et laïque se dérouleront dans l’intimité familiale.','Nous vous invitons à venir fêter avec nous dès 21h et jusqu’au bout de la nuit !'],
-  [USERS.Demo]: ['Tu n\'es pas invité !', 'Tu n\'es que l\'utilisateur de démo'],
-  [USERS.Joel]: ['Nous vous invitons à venir célébrer notre union.'],
 }
 
 const weddingEvents: WeddingEvent[] = [
@@ -35,10 +17,7 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-commune-alt.png',
     sound: './assets/sound/bell.mp3',
     volume: 0.1,
-    invited: [USERS.AllIN],
-    invitationPhrases: { 
-      [USERS.AllIN]: InvitationPhrases[USERS.AllIN] 
-    }
+
   },
   {
     hour: '13h15',
@@ -48,8 +27,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-car-alt.png',
     sound: './assets/sound/car.mp3',
     volume: 0.1,
-    invited: [USERS.AllIN],
-    invitationPhrases: {}
   },
   {
     hour: '14h00',
@@ -59,8 +36,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-ring-2.png',
     sound: './assets/sound/oui-devos.mp3',
     volume: 0.2,
-    invited: [USERS.AllIN],
-    invitationPhrases: {}
   },
   {
     hour: '14h45',
@@ -69,8 +44,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-picture-alt.png',
     sound: './assets/sound/picture.mp3',
     volume: 0.1,
-    invited: [USERS.AllIN],
-    invitationPhrases: {}
   },
   {
     hour: '15h00',
@@ -79,10 +52,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-drink-alt.png',
     sound: './assets/sound/drink.mp3',
     volume: 1,
-    invited: [USERS.AllIN, USERS.NoCeremony],
-    invitationPhrases: { 
-      [USERS.NoCeremony]: InvitationPhrases[USERS.NoCeremony]
-    }
   },
   {
     hour: '17h30',
@@ -91,8 +60,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-dinner-alt.png',
     sound: './assets/sound/dinner.mp3',
     volume: 0.1,
-    invited: [USERS.AllIN, USERS.NoCeremony],
-    invitationPhrases: {}
   },
   {
     hour: '21h00',
@@ -101,10 +68,6 @@ const weddingEvents: WeddingEvent[] = [
     iconAlt: './assets/icon-music-alt.png',
     sound: './assets/sound/music.mp3',
     volume: 0.2,
-    invited: [USERS.AllIN, USERS.NoCeremony, USERS.Party],
-    invitationPhrases: {
-      [USERS.Party]: InvitationPhrases[USERS.Party]
-    }
   }
 ];
 

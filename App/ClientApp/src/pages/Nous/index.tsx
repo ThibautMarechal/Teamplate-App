@@ -9,8 +9,6 @@ import LesPapas from './LesPapas';
 import OrganisationMariage from './OrganisationMariage';
 import SylvieLaurentChat from './SylvieLaurentChat';
 import styles from './Nous.module.scss'
-import { useUsername } from '../../Authorization';
-import { USERS } from '../../data/weddingEvents';
 // @ts-ignore
 import useCountdown from 'react-use-countdown';
 
@@ -25,7 +23,6 @@ const JOEL = (
   </div>
 )
 export default () => {
-  const username = useUsername() || USERS.Joel;
   const countdown = useCountdown(() => Date.parse('2020-10-11T12:00:00+01:00'));
   const jours = Math.floor(countdown / 1000 / 60 / 60 / 24);
   const heures = Math.floor(countdown / 1000 / 60 / 60) - (jours * 24);
@@ -77,21 +74,6 @@ export default () => {
                 Les papas
               </NavLink>
             </h3>
-            {username === USERS.Joel && (
-              <>
-                <h3>
-                  <NavLink tag={Link} to="/equipe/joel">
-                    {JOEL} 
-                  </NavLink>
-                </h3>
-                <p>Il reste&nbsp;
-                  {jours > 0 ? `${jours} jour${jours > 1 ? 's' : ''}` : null}&nbsp;
-                  {heures > 0 ? `${heures} heure${heures > 1 ? 's' : ''}` : null}&nbsp;
-                  {minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : null}&nbsp;
-                  {secondes > 0 ? `${secondes} seconde${secondes > 1 ? 's' : ''}` : null}&nbsp;
-                  pour remettre votre présentation avant le changement de témoin ! 😜 😈</p>
-              </>
-            )}
           </Route>
           <Route path='/nous/laurent-dans-la-peau-de-sylvie'>
             <Retour to="/nous" />

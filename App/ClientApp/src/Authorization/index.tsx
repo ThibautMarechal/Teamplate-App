@@ -9,8 +9,8 @@ type AuthorizationType = {
   logged: boolean;
   username?: string,
   bearer?: string;
-  login: () => void; 
-  logout: () => void; 
+  login: () => void;
+  logout: () => void;
 }
 
 export const Context = React.createContext<AuthorizationType>({ logged: false, login: () => {}, logout: () => {} });
@@ -69,11 +69,11 @@ export const AuthorizationProvider = ({ children }: { children: JSX.Element }) =
             }}>
               <FormGroup>
                 <Label for="password">Mot de passe</Label>
-                <Input 
-                  type="password" 
-                  name="password" 
-                  id="password" 
-                  value={password} 
+                <Input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={password}
                   onChange={e => setPassword(e.target.value)}
                   invalid={!!error}
                 />
